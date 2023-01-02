@@ -4,6 +4,7 @@
   "description": "server application for RankIQ",
   "main": "app.js",
   "scripts": {
+    "prod:serve":"node --es-module-specifier-resolution=node app.js",
     "serve": "nodemon --es-module-specifier-resolution=node app.js"
   },
   "type": "module",
