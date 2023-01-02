@@ -16,7 +16,7 @@ app.use(express.json());
 app.use('/user', userRouter);
 app.use('/content', contentRouter);
 app.get('/', (req, res) => {
-  res.send('hello worldsss');
+  res.send('hello world latest');
 });
 
 mongoUtil.connectToServer((err) => {
