@@ -4,6 +4,7 @@ import cors from 'cors';
 import express from 'express';
 import userRouter from './routes/user.router';
 import contentRouter from './routes/content.routes';
+import examRouter from './routes/exam.router';
 
 dotenv.config();
 const port = parseInt(process.env.PORT, 10) || 3000;
@@ -15,6 +16,7 @@ app.use(express.json());
 // make enum for routes
 app.use('/user', userRouter);
 app.use('/content', contentRouter);
+app.use('/exam', examRouter);
 app.get('/', (req, res) => {
   res.send('hello world latest');
 });
