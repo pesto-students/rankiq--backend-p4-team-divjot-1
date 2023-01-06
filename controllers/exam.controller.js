@@ -223,3 +223,17 @@ export const calculateRank = async (req, res, next) => {
     next();
   }
 };
+
+export const getExamHistory = async (req, res, next) => {
+  try {
+    const db = getDb();
+    const marksCollection = db.collection('rrc2022');
+    const history = await marksCollection
+      .find({ userIds: req.email })
+      .sort([['_id', -1]])
+      .toArray();
+    res.status(200).json(history);
+  } catch (e) {
+    next(e);
+  }
+};

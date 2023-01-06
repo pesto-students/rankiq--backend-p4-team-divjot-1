@@ -6,8 +6,10 @@ import {
   logMarks,
   computeNormalisedMarks,
   calculateRank,
+  getExamHistory,
 } from '../controllers/exam.controller';
 import { EXAM } from '../constants/endpoint';
+import { verifyToken } from '../middlewares/authJWT';
 
 const examRouter = express.Router();
 
@@ -36,5 +38,7 @@ examRouter.post(
   [body('rollNumber').not().isEmpty().withMessage('rollNumber is required')],
   calculateRank
 );
+
+examRouter.get(EXAM.HISTORY, [verifyToken], getExamHistory);
 
 export default examRouter;

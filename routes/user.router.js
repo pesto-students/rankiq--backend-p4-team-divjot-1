@@ -7,10 +7,6 @@ import { signUp, signIn, verifyUser } from '../controllers/user.controller';
 
 const userRouter = express.Router();
 
-// enum for routes
-// localisation for server and client
-// react-localisation
-// Add localisation in NFR for PRD
 userRouter.post(
   USER.SIGNUP,
   [

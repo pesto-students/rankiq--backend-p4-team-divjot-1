@@ -10,6 +10,7 @@ export const EXAM = {
   LOG_MARKS: '/logMarks',
   NORMALISE: '/calculateNormalisedMarks',
   CHECK_RANK: '/checkRank',
+  HISTORY: '/userExamHistory',
 };
 
 export const CONTENT = {
