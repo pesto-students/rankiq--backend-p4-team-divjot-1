@@ -14,7 +14,7 @@ const port = parseInt(process.env.PORT, 10) || 3000;
 const app = express();
 
 Sentry.init({
-  dsn: 'https://45d6da247fcb4ba785f5cb7e84188817@o4504378301087744.ingest.sentry.io/4504475243118592',
+  dsn: process.env.SENTRY_DSN,
 
   integrations: [
     // enable HTTP calls tracing
@@ -55,7 +55,6 @@ const transaction = Sentry.startTransaction({
 mongoUtil.connectToServer((err) => {
   if (err) {
     Sentry.captureException(err);
-    transaction.finish();
   }
   app.listen(port, () => {
     transaction.finish();
