@@ -1,5 +1,6 @@
 import nodemailer from 'nodemailer';
 import dotenv from 'dotenv';
+import * as Sentry from '@sentry/node';
 dotenv.config();
 
 const transport = nodemailer.createTransport({
@@ -23,7 +24,7 @@ const sendConfirmationEmail = async (name, email, confirmationCode) => {
       </div>`,
     });
   } catch (e) {
-    console.log(e);
+    Sentry.captureException(e);
   }
 };
 
