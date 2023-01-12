@@ -9,10 +9,9 @@ export const sendFeedback = async (req, res) => {
     feedback: req.body.feedback,
   };
   try {
-	  nodeMailer.sendFeedbackEmail(data);
+    nodeMailer.sendFeedbackEmail(data);
     res.status(200).json({ message: 'feedback email sent successfully' });
   } catch (e) {
     console.warn('send feedback falied', data);
-    res.status(401).json({ message: 'feedback email failed' });
   }
 };

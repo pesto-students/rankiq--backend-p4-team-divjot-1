@@ -6,7 +6,7 @@ import { sendFeedback } from '../controllers/feedback.controller';
 const feedbackRouter = express.Router();
 
 feedbackRouter.post(
-  FEEDBACK.BASE,
+  FEEDBACK.SEND,
   [
     body('email').isEmail().withMessage('Enter valid email'),
     body('firstName').not().isEmpty().withMessage('firstName is required'),

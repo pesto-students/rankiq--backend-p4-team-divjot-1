@@ -20,4 +20,5 @@ export const CONTENT = {
 
 export const FEEDBACK = {
   BASE: '/feedback',
+  SEND: '/sendEmail',
 };
