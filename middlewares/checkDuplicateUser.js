@@ -1,4 +1,4 @@
-import dbUtils from '../utils/mongoUtils';
+import dbUtils from '../utils/mongoUtils.js';
 import _lodash from 'lodash';
 
 const { isEmpty } = _lodash;

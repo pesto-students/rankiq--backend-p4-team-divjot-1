@@ -1,9 +1,9 @@
 import express from 'express';
 import { body, check } from 'express-validator';
-import checkDuplicateUser from '../middlewares/checkDuplicateUser';
-import { REGEX } from '../constants/global';
-import { USER } from '../constants/endpoint';
-import { signUp, signIn, verifyUser } from '../controllers/user.controller';
+import checkDuplicateUser from '../middlewares/checkDuplicateUser.js';
+import { REGEX } from '../constants/global.js';
+import { USER } from '../constants/endpoint.js';
+import { signUp, signIn, verifyUser } from '../controllers/user.controller.js';
 
 const userRouter = express.Router();
 

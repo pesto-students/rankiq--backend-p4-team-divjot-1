@@ -1,4 +1,4 @@
-import dbUtils from '../utils/mongoUtils';
+import dbUtils from '../utils/mongoUtils.js';
 
 const { getDb } = dbUtils;
 

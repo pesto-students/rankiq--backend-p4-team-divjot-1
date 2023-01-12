@@ -1,9 +1,9 @@
 import { validationResult } from 'express-validator';
 import JWT from 'jsonwebtoken';
 import dotenv from 'dotenv';
-import dbUtils from '../utils/mongoUtils';
-import nodeMailer from '../utils/emailUtils';
-import cryptoUtils from '../utils/cryptoUtils';
+import dbUtils from '../utils/mongoUtils.js';
+import nodeMailer from '../utils/emailUtils.js';
+import cryptoUtils from '../utils/cryptoUtils.js';
 
 const { getDb } = dbUtils;
 dotenv.config();

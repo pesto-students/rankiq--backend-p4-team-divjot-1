@@ -17,3 +17,7 @@ export const CONTENT = {
   BASE: '/content',
   GET_CONTENT: '/getContent',
 };
+
+export const FEEDBACK = {
+  BASE: '/feedback',
+};
