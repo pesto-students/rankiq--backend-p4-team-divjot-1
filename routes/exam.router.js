@@ -1,15 +1,15 @@
 import express from 'express';
 import { body } from 'express-validator';
-import checkDuplicateMarksEntry from '../middlewares/checkDuplicateMarksEntry.js';
-import checkForNewMarks from '../middlewares/checkForNewMarks.js';
+import checkDuplicateMarksEntry from '../middlewares/checkDuplicateMarksEntry';
+import checkForNewMarks from '../middlewares/checkForNewMarks';
 import {
   logMarks,
   computeNormalisedMarks,
   calculateRank,
   getExamHistory,
-} from '../controllers/exam.controller.js';
-import { EXAM } from '../constants/endpoint.js';
-import { verifyToken } from '../middlewares/authJWT.js';
+} from '../controllers/exam.controller';
+import { EXAM } from '../constants/endpoint';
+import { verifyToken } from '../middlewares/authJWT';
 
 const examRouter = express.Router();
 

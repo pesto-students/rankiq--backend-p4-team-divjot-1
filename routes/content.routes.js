@@ -1,6 +1,6 @@
 import express from 'express';
-import { getContent } from '../controllers/content.controller.js';
-import { CONTENT } from '../constants/endpoint.js';
+import { getContent } from '../controllers/content.controller';
+import { CONTENT } from '../constants/endpoint';
 
 const contentRouter = express.Router();
 

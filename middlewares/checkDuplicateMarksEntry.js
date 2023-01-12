@@ -1,5 +1,5 @@
 import _lodash from 'lodash';
-import dbUtils from '../utils/mongoUtils.js';
+import dbUtils from '../utils/mongoUtils';
 
 const { isEmpty } = _lodash;
 const { getDb } = dbUtils;

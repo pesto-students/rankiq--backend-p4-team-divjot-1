@@ -1,4 +1,4 @@
-import nodeMailer from '../utils/emailUtils.js';
+import nodeMailer from '../utils/emailUtils';
 
 export const sendFeedback = async (req, res) => {
   console.log('sendFeedback', req.body);

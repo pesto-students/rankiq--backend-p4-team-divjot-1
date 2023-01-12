@@ -1,7 +1,7 @@
 import express from 'express';
 import { body } from 'express-validator';
-import { FEEDBACK } from '../constants/endpoint.js';
-import { sendFeedback } from '../controllers/feedback.controller.js';
+import { FEEDBACK } from '../constants/endpoint';
+import { sendFeedback } from '../controllers/feedback.controller';
 
 const feedbackRouter = express.Router();
 

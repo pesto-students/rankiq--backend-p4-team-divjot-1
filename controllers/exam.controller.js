@@ -1,7 +1,7 @@
 import { validationResult } from 'express-validator';
-import dbUtils from '../utils/mongoUtils.js';
+import dbUtils from '../utils/mongoUtils';
 import _lodash from 'lodash';
-import { getStandardDeviation, findRank } from '../utils/commonUtils.js';
+import { getStandardDeviation, findRank } from '../utils/commonUtils';
 
 const { filter, orderBy, maxBy, meanBy, slice } = _lodash;
 

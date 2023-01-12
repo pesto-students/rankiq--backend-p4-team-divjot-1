@@ -1,12 +1,12 @@
-import mongoUtil from './utils/mongoUtils.js';
+import mongoUtil from './utils/mongoUtils';
 import dotenv from 'dotenv';
 import cors from 'cors';
 import express from 'express';
-import userRouter from './routes/user.router.js';
-import contentRouter from './routes/content.routes.js';
-import examRouter from './routes/exam.router.js';
-import feedbackRouter from './routes/feedback.router.js';
-import { CONTENT, EXAM, FEEDBACK, USER } from './constants/endpoint.js';
+import userRouter from './routes/user.router';
+import contentRouter from './routes/content.routes';
+import examRouter from './routes/exam.router';
+import feedbackRouter from './routes/feedback.router';
+import { CONTENT, EXAM, FEEDBACK, USER } from './constants/endpoint';
 
 dotenv.config();
 const port = parseInt(process.env.PORT, 10) || 3000;
