@@ -28,7 +28,6 @@ const sendConfirmationEmail = async (name, email, confirmationCode) => {
 };
 
 const sendResetPasswordLink = async ({ name, email, token }) => {
-  console.info(name, email, token);
   try {
     await transport.sendMail({
       from: process.env.EMAIL_ID,
