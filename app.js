@@ -7,7 +7,8 @@ import express from 'express';
 import userRouter from './routes/user.router';
 import contentRouter from './routes/content.routes';
 import examRouter from './routes/exam.router';
-import { CONTENT, EXAM, USER } from './constants/endpoint';
+import feedbackRouter from './routes/feedback.router';
+import { CONTENT, EXAM, FEEDBACK, USER } from './constants/endpoint';
 
 dotenv.config();
 const port = parseInt(process.env.PORT, 10) || 3000;
@@ -41,6 +42,7 @@ app.use(Sentry.Handlers.tracingHandler());
 app.use(USER.BASE, userRouter);
 app.use(CONTENT.BASE, contentRouter);
 app.use(EXAM.BASE, examRouter);
+app.use(FEEDBACK.BASE, feedbackRouter);
 app.get('/', (req, res) => {
   res.send('hello world latest');
 });
