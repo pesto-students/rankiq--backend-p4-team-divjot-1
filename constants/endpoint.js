@@ -3,6 +3,8 @@ export const USER = {
   SIGNIN: '/signin',
   SIGNUP: '/signup',
   CONFIRM: '/confirm/:confirmationCode',
+  RESET_PASSWORD_LINK: '/resetPasswordLink',
+  UPADATE_PASSWORD: '/updatePassword',
 };
 
 export const EXAM = {

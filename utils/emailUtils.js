@@ -27,12 +27,28 @@ const sendConfirmationEmail = async (name, email, confirmationCode) => {
   }
 };
 
+const sendResetPasswordLink = async ({ name, email, token }) => {
+  try {
+    await transport.sendMail({
+      from: process.env.EMAIL_ID,
+      to: email,
+      subject: 'RankIQ - Reset password link',
+      html: `<h1>Reset Password Link</h1>
+      <h2>Hello ${name}</h2>
+      <p>You can reset your password by clicking on the following link</p>
+      <a href=${process.env.CLIENT_URL}resetPassword?key=${token}> Click here</a>
+      </div>`,
+    });
+  } catch (e) {
+    console.log(e);
+  }
+};
+
 const sendFeedbackEmail = async (data) => {
-  console.info('data   ', data);
   try {
     await transport.sendMail({
       from: `donotreplyrankiq@gmail.com`,
-      to: `${data.email}, donotreplyrankiq+feedback@gmail.com, swapnilakolkar.pesto@gmail.com, konarssureshamazon@gmail.com`,
+      to: `${data.email}, donotreplyrankiq+feedback@gmail.com`,
       subject: 'RankIQ - feedback',
       html: `<!DOCTYPE html>
 <html xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" lang="en">
@@ -293,4 +309,8 @@ const sendFeedbackEmail = async (data) => {
   }
 };
 
-export default { sendConfirmationEmail, sendFeedbackEmail };
+export default {
+  sendConfirmationEmail,
+  sendResetPasswordLink,
+  sendFeedbackEmail,
+};
