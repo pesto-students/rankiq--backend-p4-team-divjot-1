@@ -4,13 +4,15 @@
   "description": "server application for RankIQ",
   "main": "app.js",
   "scripts": {
-    "prod:serve":"node --es-module-specifier-resolution=node app.js",
+    "prod:serve": "node --es-module-specifier-resolution=node app.js",
     "serve": "nodemon --es-module-specifier-resolution=node app.js"
   },
   "type": "module",
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@sentry/node": "^7.29.0",
+    "@sentry/tracing": "^7.29.0",
     "cors": "^2.8.5",
     "crypto-js": "^4.1.1",
     "dotenv": "^16.0.3",
