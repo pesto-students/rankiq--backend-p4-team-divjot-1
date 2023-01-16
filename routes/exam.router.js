@@ -22,7 +22,6 @@ examRouter.post(
     body('date').not().isEmpty().withMessage('caste is required'),
     body('shift').not().isEmpty().withMessage('shift is required'),
     body('mark').not().isEmpty().withMessage('mark is required'),
-    body('reservation').not().isEmpty().withMessage('reservation is required'),
     body('subject').not().isEmpty().withMessage('subject is required'),
     body('url').not().isEmpty().withMessage('url is required'),
     body('zone').not().isEmpty().withMessage('zone is required'),

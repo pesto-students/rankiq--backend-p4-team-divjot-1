@@ -1,7 +1,7 @@
 import nodeMailer from '../utils/emailUtils';
+import * as Sentry from '@sentry/node';
 
 export const sendFeedback = async (req, res) => {
-  console.log('sendFeedback', req.body);
   const data = {
     name: `${req.body.firstName} ${req.body.lastName}`,
     email: req.body.email,
@@ -9,9 +9,9 @@ export const sendFeedback = async (req, res) => {
     feedback: req.body.feedback,
   };
   try {
-    nodeMailer.sendFeedbackEmail(data);
+    await nodeMailer.sendFeedbackEmail(data);
     res.status(200).json({ message: 'feedback email sent successfully' });
   } catch (e) {
-    console.warn('send feedback falied', data);
+    Sentry.captureException(e);
   }
 };
