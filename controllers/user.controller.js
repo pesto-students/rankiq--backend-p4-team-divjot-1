@@ -155,12 +155,6 @@ export const createResetPasswordLink = async (req, res, next) => {
         email: email,
         token: token,
       });
-      //   if (emailStatus === 'error') {
-      //     return res.status(400).json({
-      //       error:
-      //         'Error occured while sending reset link, please try again later.',
-      //     });
-      //   }
       return res.status(200).json({
         message: 'Reset password link has been sent. Please check your email.',
       });
@@ -174,17 +168,13 @@ export const createResetPasswordLink = async (req, res, next) => {
 export const updatePassword = async (req, res, next) => {
   const { resetToken, password } = req.body;
   if (resetToken) {
-    JWT.verify(
-      resetToken,
-      process.env.ACCESS_TOKEN_SECRET,
-      function (error, decodedData) {
-        if (error) {
-          return res
-            .status(400)
-            .send({ message: 'Incorrect token or it is expired' });
-        }
+    JWT.verify(resetToken, process.env.ACCESS_TOKEN_SECRET, (error) => {
+      if (error) {
+        return res
+          .status(400)
+          .send({ message: 'Incorrect token or it is expired' });
       }
-    );
+    });
   }
   try {
     const db = getDb();
