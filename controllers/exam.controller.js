@@ -205,11 +205,11 @@ export const calculateRank = async (req, res, next) => {
       const zoneShiftCategory = await zoneShiftCategoryCursor.toArray();
 
       const objectToReturn = {
-        overall: findRank(overall, rollNumber),
-        zone: findRank(zones, rollNumber),
-        zoneShift: findRank(zoneShift, rollNumber),
-        zoneCategory: findRank(zoneCategory, rollNumber),
-        zoneShiftCategory: findRank(zoneShiftCategory, rollNumber),
+        overall: findRank(overall, mark),
+        zone: findRank(zones, mark),
+        zoneShift: findRank(zoneShift, mark),
+        zoneCategory: findRank(zoneCategory, mark),
+        zoneShiftCategory: findRank(zoneShiftCategory, mark),
         rawMarks: mark,
         zoneSelected: zone,
         categorySelected: category,
