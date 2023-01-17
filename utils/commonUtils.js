@@ -1,6 +1,6 @@
 import _lodash from 'lodash';
 
-const { meanBy, findIndex } = _lodash;
+const { meanBy, findIndex, uniq } = _lodash;
 
 export function getStandardDeviation(array, key = 'mark') {
   const n = array.length;
@@ -11,9 +11,11 @@ export function getStandardDeviation(array, key = 'mark') {
   );
 }
 
-export const findRank = (arr, rollNumber) => {
-  const index = findIndex(arr, (d) => d.rollNumber === rollNumber);
+export const findRank = (arr, mark) => {
+  const marksArray = arr.map((d) => d.mark);
+  const uniqueMarkArray = uniq(marksArray);
+  const index = findIndex(uniqueMarkArray, (d) => d === mark);
   return index !== -1
-    ? { rank: index + 1, total: arr.length }
+    ? { rank: index + 1, total: uniqueMarkArray.length }
     : { rank: null, total: null };
 };
