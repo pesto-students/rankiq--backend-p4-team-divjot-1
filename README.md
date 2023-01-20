@@ -4,7 +4,7 @@ RankIQ is an automated program built to calculate marks from response sheets of 
 
 ## Requirements
 - [NodeJS](https://nodejs.org/en/) (v18.12.1)
-- [npm](https://docs.npmjs.com/try-the-latest-stable-version-of-npm) 8.19.2
+- [npm](https://docs.npmjs.com/try-the-latest-stable-version-of-npm) (v8.19.2)
 
 ## Getting Started
 ```
